@@ -41,12 +41,12 @@ class Weather {
                 Parser parser = new  Parser(factNode,rootNode, true);
                 // Вывод результатов в консоль
                 //день 0(сегодня)
-                Weather_list.list(city,parser.temp,parser.feelsLike,parser.condition,parser.windSpeed,parser.Day, parser.sunrise, parser.sunset);
+                WeatherList.list(city,parser.temp,parser.feelsLike,parser.condition,parser.windSpeed,parser.Day, parser.sunrise, parser.sunset);
                 JsonNode tomorrowForecast = rootNode.path("forecasts").get(1);
                 //день 1(завтра)
                 JsonNode dayPart = tomorrowForecast.path("parts").path("day");
                 Parser parser_tommorow = new  Parser(dayPart,rootNode, false);
-                Weather_list.list(city,parser_tommorow.temp,parser_tommorow.feelsLike,parser_tommorow.condition,parser_tommorow.windSpeed,parser_tommorow.Day, parser_tommorow.sunrise, parser_tommorow.sunset);
+                WeatherList.list(city,parser_tommorow.temp,parser_tommorow.feelsLike,parser_tommorow.condition,parser_tommorow.windSpeed,parser_tommorow.Day, parser_tommorow.sunrise, parser_tommorow.sunset);
 
                 // код оказался неудачным, допустим 404(проблемы на нашей стороне) или 302(нас перенаправили)
             } else {
