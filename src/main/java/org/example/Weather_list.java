@@ -1,6 +1,6 @@
 package org.example;
 
-public class Weather_list {
+public class WeatherList {
     static void list(String city, int temp, int feelsLike, String condition, double windSpeed,String Day,String sunrise, String sunset){
         System.out.printf("=== ПОГОДА %s (%s) ===\n",Day,city);
         System.out.println("Температура воздуха : " + temp + "°C");
